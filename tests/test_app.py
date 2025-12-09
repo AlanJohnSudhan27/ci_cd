@@ -31,11 +31,13 @@ def test_divide_2():
     assert divide(20, 4) != 6
 
 def test_divide_by_zero():
+    error = False
     try:
         divide(10, 0)
-        assert False, "Expected ValueError for division by zero"
     except ValueError as e:
+        error = True
         assert str(e) == "Cannot divide by zero."
+    assert error
 
 def test_log_1():
     assert log(100, 10) == 2
