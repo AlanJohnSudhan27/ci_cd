@@ -1,9 +1,8 @@
-name: Python CICD
+name: Python CD
 
 on:
   push:
     branches: [ main ]
-  pull_request:
 
 jobs:
   Deploy:
