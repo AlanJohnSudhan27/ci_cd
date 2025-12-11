@@ -3,9 +3,13 @@ name: Python CD
 on:
   push:
     branches: [ main ]
+  pull_request:
+    types: [closed]
+    branches: [ main ]
 
 jobs:
   Deploy:
+    if: github.event.pull_request.merged == true && github.event.pull_request.head.ref == 'development'
     runs-on: ubuntu-latest
     permissions:
       pages: write
